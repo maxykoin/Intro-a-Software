@@ -1,6 +1,5 @@
-ex = int(input("Escolha o exercicio para vizualizar (1-10): "))
-
 while ex != 0:
+    ex = int(input("Escolha o exercicio para vizualizar (1-10): "))
     match ex:
         case 1:
             print("1) pede uma letra minuscula e a transforma em maiscula por ascii")
