@@ -1,8 +1,7 @@
 import math
-ex = -1
 
-while ex != 0:
-    ex = int(input("Escolha o exércicio (1-3): "))
+while True:
+    ex = int(input("Escolha o exércicio: \n 1 - Jogo de Adivinhação \n 2 - Eleição \n 3 - Calculadora \n 0 - Sair \n Resposta: "))
     match ex:
         case 0:
             break
@@ -149,3 +148,5 @@ while ex != 0:
                         real = n1/n3
                         img = n2-n4
                         print(f"{real}∠{img}º")
+        case _:
+            print("Valor Inválido")
