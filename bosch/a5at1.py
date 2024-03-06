@@ -1,8 +1,9 @@
 while True:
-    ex = int(input("Escolha o exercicio: "))
+    ex = int(input("\nEscolha o exercicio: "))
     match ex:
         case 0:
             break
+        
         case 1:
             n1 = float(input("Primeiro número: "))
             n2 = float(input("Segundo número: "))
@@ -13,6 +14,7 @@ while True:
                 print(n2)
             else:
                 print("Valores iguais")
+                
         case 2:
             l = input("Insira seu genero (M/F): ").upper()
             
@@ -82,7 +84,6 @@ while True:
             
             lista = ["+", "-", "*", "/"]
             
-            
             try:
                 n1 = float(input("1º: "))
                 n2 = float(input("2º: "))
@@ -101,7 +102,6 @@ while True:
                     if n2 < 0:
                         raise err
                     print(n1/n2)
-                    
             except Error:
                 print("Simbolo Invalido")
             except ValueError:
@@ -158,10 +158,10 @@ while True:
             print(f" Quantidade de números digitados: {c} \n Soma: {s} \n Média: {s/c}")
         
         case 13:
-            pass
-        
-        case 14:
-            pass
+            n = input("Insira um número inteiro: ")
+            
+            for i in range(len(n)-1, -1, -1):
+                print(n[i], end='')
         
         case 15:
             import random 
@@ -183,11 +183,15 @@ while True:
                     print("está abaixo")
         
         case 16:
-            pass
             b = int(input("Base: "))
             e = int(input("Expoente: "))
+            n = 1
             
-            print()
+            for i in range(1, e+1):
+                n = b * i
+                
+            
+            print(n)
             
         case 17:
             pass
@@ -210,13 +214,48 @@ while True:
             print(l1)
             print(l2)
             
-            for i in range(0, len(l1)):
-                if l1[i] == l2[i]:
-                    print(f"{i} está nas duas listas")
-                else:
-                    pass
+            for i in l1:
+                for j in l2:
+                    if i == j:
+                        print(f"{i} está nas duas listas")
+                    else:
+                        pass
                     
         case 21:
-            pass
+            import random
+            l1 = []
+            l2 = []
+            l3 = []
+            
+            for i in range(0, 11):
+                l1.append(random.randint(0, 11))
+                l2.append(random.randint(0, 11))
+            
+            print(l1)
+            print(l2)
+            
+            for i in l1:
+                for j in l2:
+                    if i == j and i not in l3:
+                        print(f"{i} está nas duas listas")
+                        l3.append(i)
+                    else:
+                        pass
         
-                
+        case 22:
+            l1 = []
+            l2 = []
+            r=0
+            
+            for i in range(1, 11):
+                l1.append(input(f"Digite o {i} elemento: "))
+            
+            for i in l1:
+                if l1.count(i) > 1 and i not in l2: 
+                    print(f"\n{i} está na lista nas posições: ", end='')
+                    r+=1
+                    for j in range(len(l1)):
+                        if i == l1[j]:
+                            print(j+1, end=', ')
+            if r == 0:
+                print("Nenhum numero repete")
